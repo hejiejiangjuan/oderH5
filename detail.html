@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no, email=no" />
+    <meta charset="UTF-8">
+    <title>酒店详情页</title>
+    <link rel="stylesheet" type="text/css" href="themes/css/core.css">
+    <link rel="stylesheet" type="text/css" href="themes/css/home.css">
+    <link rel="stylesheet" href="themes/css/detail.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="themes/js/ajax.js"></script>
+</head>
+
+<body>
+    <div id="detail" style="height: 100%;">
+        <div class="aui-content-box">
+            <!-- <div class="title-name">
+                <i class="icon-forbid"></i>
+                <p>酒店详情页</p>
+            </div> -->
+            <div class="orderInfo">
+                <p class="orderNum">订单号：{{orderDetail.order_no}}</p>
+                <div class="timeInfo">
+                    <img  :src="orderDetail.pic_addr" onerror="this.src='themes/img/icon/log.jpg'" alt="">
+                        
+                    <div>
+                        <span>购买时间：{{orderDetail.pay_date}}</span>
+                        <span v-if="order_type==1">有效期限：{{orderDetail.start_date}}至{{orderDetail.end_date}}</span>
+                    </div>
+                </div>
+                <div class="hotelInfo">
+                    <span>{{orderDetail.order_name}}</span>
+                    <span class="use-no">{{orderStatus(orderDetail)}}</span>
+                </div>
+            </div>
+            
+            <div class="couponCode">
+                <div class="codeNum">
+                    <span>酒店券码</span>
+                    <span class="num">共<em>{{orderDetail.com_num}}</em>张</span>
+                </div>
+                <div class="couponList">
+                    <ul>
+                        <li v-if="order_type==1" v-for="item in orderDetail.code_list">
+                            <div class="codeNumber">
+                                <span>{{item.code}}</span>
+                                <span class="addLabel" v-if="item.status==4">预约失败,请重新预约</span>
+                                <span class="addLabel" v-if="item.status==3">{{item.checkDate}}</span>
+                            </div>
+                            <div :class="codeStatusStyle(item)" @click='toAppointMent(item)'>
+                                <span>{{codeStatus(item)}}</span>
+                            </div>
+                        </li>
+                        <li v-if="order_type==2">
+                            <div class="codeNumber">
+                                <span>{{orderDetail.code}}</span>
+                                <span class="addLabel">{{orderDetail.com_num}}张</span>
+                            </div>
+                            <div :class="orderDetail.status==1 ? 'appointMentRightNow': 'success'">
+                                <span>{{orderDetail.status==1 ? '待验证': '已验证'}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="contentInfo" v-if="order_type==1">
+                <div class="attentionTitle">
+                    注意事项
+                </div>
+                <div class="attentionInfo">
+                    <ul id="appointLimit">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tbotton-botn" style="width:100%;height:40px;overflow: hidden;bottom: 0px;color: #999;">
+            <div class="botton-ctn" style="width:400px;height:100%;margin:0 auto;">
+                <span style="display:block;width:200px;height:20px;margin:0 auto;text-align:center;lin-height:20px;font-size:12px;
+                  "> 蜀ICP备15003730号-1</span>
+                <span style="display:block;width:260px;height:20px;margin:0 auto;text-align: center;lin-height:20px;font-size:12px;
+                  ">@Copyright2019黑豆科技.AllRightsReserved.</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="themes/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="themes/js/detail.js"></script>
+
+</html>

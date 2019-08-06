@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<meta charset="UTF-8">
+	<title>我的订单</title>
+	<link rel="stylesheet" type="text/css" href="themes/css/core.css">
+	<link rel="stylesheet" type="text/css" href="themes/css/home.css">
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="themes/js/ajax.js"></script>
+</head>
+
+<body>
+	<div id="container" v-cloak style="height: 100%;">
+
+		<div class="aui-content-box">
+			<!-- <div class="title-name">
+				<i class="icon-forbid"></i>
+				<p>我的订单</p>
+			</div> -->
+			<div class="myorder-classify">
+				<ul class="tab-nav">
+					<li class="tab-nav-item" v-bind:class="[navindex == 1?'tab-active':'']" @click="nav(1)">
+						<a href="javascript:;">
+							<i class="icon-library"></i>
+							<p>酒店</p>
+						</a>
+					</li>
+					<li class="tab-nav-item" v-bind:class="[navindex == 2?'tab-active':'']" @click="nav(2)">
+						<a href="javascript:;">
+							<i class="icon-ticket"></i>
+							<p>门票</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="tab-pannel">
+				<!-- 酒店 -->
+				<div class="tab-panel-item tab-active">
+					<div class="aui-myorder-fix">
+						<ul class="tab-nav">
+							<li class="tab-nav-item tab-nav-item-large" v-bind:class="[order_status == 1?'tab-active':'']"
+								@click="tab(1)">
+								<a href="javascript:;">全部</a>
+							</li>
+							<li class="tab-nav-item tab-nav-item-large" v-bind:class="[order_status == 2?'tab-active':'']"
+								@click="tab(2)">
+								<a href="javascript:;">待使用</a>
+							</li>
+							<li class="tab-nav-item tab-nav-item-large" v-bind:class="[order_status == 3?'tab-active':'']"
+								@click="tab(3)">
+								<a href="javascript:;">使用中</a>
+							</li>
+							<li class="tab-nav-item tab-nav-item-large" v-bind:class="[order_status == 4?'tab-active':'']"
+								@click="tab(4)">
+								<a href="javascript:;">已使用</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="tab-panel">
+						<div class="tab-panel-item tab-active">
+							<ul>
+								<li v-for='item in list'>
+									<div class="aui-list-order">
+										<div class="aui-list-order-header">
+											<div class="aui-list-order-header-title">{{item.order_name}}</div>
+											<div>
+												<button class="aui-list-order-header-btn" v-show='hasButton'
+													@click="getMoreDetail(item)">立即预约</button>
+											</div>
+										</div>
+										<div class="aui-list-order-time">
+											<div class="aui-list-order-time-img">
+												<img :src="item.pic_addr" onerror="this.src='themes/img/icon/log.jpg'" alt="">
+											</div>
+											<div class="aui-list-order-time-des">
+												<div class="aui-list-order-time-des-text">购买时间：{{item.pay_date}}</div>
+												<div class="aui-list-order-time-des-text" v-if="order_type==1">
+													有效期限：{{item.start_date}}至{{item.end_date}}</div>
+											</div>
+										</div>
+										<div class="aui-list-order-num">
+											<div class="aui-list-order-num-bd">共{{item.com_num}}张/<em>{{orderStatus(item)}}</em></div>
+											<div class="aui-list-order-num-ft" @click="getMoreDetail(item)">更多详情</div>
+										</div>
+									</div>
+								</li>
+
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				
+
+			</div>
+
+
+		</div>
+		<div class="tbotton-botn" style="width:100%;height:40px;overflow: hidden;bottom: 0px;color: #999;">
+				<div class="botton-ctn" style="width:400px;height:100%;margin:0 auto;">
+						<span style="display:block;width:200px;height:20px;margin:0 auto;text-align:center;lin-height:20px;font-size:12px;
+							"> 蜀ICP备15003730号-1</span>
+						<span style="display:block;width:260px;height:20px;margin:0 auto;text-align: center;lin-height:20px;font-size:12px;
+							">@Copyright2019黑豆科技.AllRightsReserved.</span>
+				</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="themes/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="themes/js/index.js"></script>
+</body>
+
+</html>

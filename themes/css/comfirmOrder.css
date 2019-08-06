@@ -1,0 +1,48 @@
+.addOrderInfo{
+    background:#fff;
+    margin-top:1rem;
+    padding:4%;
+    box-sizing: border-box;
+}
+.addOrderInfo div{
+    display: flex;
+    margin-bottom:1.5rem;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.addOrderInfo div label{
+    width:40%;
+    text-align: right;
+    margin-right:6%;
+}
+.addOrderInfo div:last-child{
+    margin-bottom:0;
+}
+.addOrderInfo div input{
+    width:40%;
+    outline: none;
+    border:none;
+    border:1px solid #eeeeee;
+    height:1.2rem;
+    line-height:1.2rem;
+    background:#f7f7f7;
+}
+
+.comfirm{
+    background:#fb7374;
+    border:none;
+    outline: none;
+    padding:1% 2%;
+    color:#fff;
+    display: inline-block;
+    margin:0 auto;
+}
+.comfirmOrder {
+    background:#999;
+    border:none;
+    outline: none;
+    padding:1% 2%;
+    color:#fff;
+    display: inline-block;
+    margin:0 auto;
+}

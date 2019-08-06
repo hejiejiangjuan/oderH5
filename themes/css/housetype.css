@@ -1,0 +1,63 @@
+
+.contentInfo{
+  margin:1rem auto 0 auto;
+  background:#fff;
+  border-radius:0.2rem;
+  padding:3% 1%;
+  box-sizing:border-box;
+}
+
+.attentionInfo{
+  width:95%;
+  margin:0 auto;
+}
+
+.attentionTitle{
+  font-size:0.8rem;
+  color:#333333;
+  margin-bottom:0.5rem;
+  font-weight: bold;
+}
+.housetypeInfo{
+  background:#fff;
+  margin-top:1rem;
+  padding:4%;
+  box-sizing: border-box;
+}
+.houster-center{
+  width: 100%;
+  height: 100%;
+}
+.houster-li{
+  width: 100%;
+  display: flex;
+  justify-items: space-around;
+  align-items: center;
+}
+.houster-li{
+  padding: 4% 0;
+  border-bottom: 1px solid #cccccc;
+}
+.houesto{
+  width: 25%;
+  text-align: center;
+  height: 100%;
+}
+.houster-number{
+
+}
+.okhouster{
+  width: 25%;
+  height: 1.5rem;
+  border: none;
+  border-radius: .5rem;
+  color: #ffffff;
+  background: #fb7374;
+}
+.btncenter{
+  width: 100%;
+  height: 1.5rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: .5rem;
+}

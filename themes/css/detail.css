@@ -1,0 +1,156 @@
+.orderInfo{
+    background: #07c1ab;
+    color:#fff;
+    border-radius:0.3rem;
+    padding:0 0 1rem 0;
+
+    box-sizing:border-box;
+    
+}
+
+.timeInfo{
+    display: flex;
+    width:95%;
+    margin:0 auto;
+    align-items: center;
+    padding:3% 0;
+    margin-bottom:1rem;
+}
+
+.timeInfo img{
+    width:2.8rem;
+    height:2.8rem;
+    margin-right:0.5rem;
+}
+
+.timeInfo div{
+    display: flex;
+    flex-direction: column;
+}
+
+.orderNum{
+    font-size:0.8rem;
+    padding:2% 0 2% 3%;
+    border-bottom:1px solid #83e0d5;
+    
+}
+.hotelInfo{
+    width:95%;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hotelInfo .use-no{
+    width:3.687rem;
+    height:1.5rem;
+    background:#fff;
+    color:#07c1ab;
+    text-align:center;
+    line-height:1.5rem;
+    border-radius:0.3rem;
+}
+
+.couponCode{
+    background:#fff;
+    margin-top:1rem;
+    padding:3% 1%;
+    box-sizing:border-box;
+    border-radius:0.2rem;
+}
+
+.codeNum{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:0.375rem;
+}
+.codeNum span:first-child{
+    font-weight: bold;
+    font-size:0.8rem;
+}
+.codeNum .num em{
+    color:#07c1ab;
+    margin:0 0.2rem;
+}
+.couponList ul{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.couponList ul li{
+    display: flex;
+    width:48%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    /* border:1px solid #f0f0f0; */
+    height:4.7rem;
+    /* line-height:4.7rem; */
+    margin-bottom:0.375rem;
+}
+
+.couponList ul li>div:nth-of-type(2){
+    
+    width:30%;
+    height:100%;
+    text-align:center;
+    padding: 0 5%;
+    box-sizing: border-box;
+    color:#fff;
+    position: relative;
+}
+.couponList ul li>div:nth-of-type(2) span{
+    position: absolute;;
+    top:50%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0)
+}
+.couponList ul li div.appointMentRightNow{
+    background:#fb7374;
+}
+.couponList ul li div.hasUsed{
+    background:#bfbfbf;
+}
+.couponList ul li div.noStart{
+    background:#ebbf5c;
+}
+.couponList ul li div.center-appointMent{
+    background:#73a6f4;
+}
+.couponList ul li div.success{
+    background:#3bc257;
+}
+.couponList ul li .codeNumber{
+    border-left:1px solid #f0f0f0;
+    border-top:1px solid #f0f0f0;
+    border-bottom:1px solid #f0f0f0;
+    width:70%;
+    height:100%;
+     text-align:center;
+     display: flex;
+     flex-direction: column;
+    justify-content: space-around;
+}
+.couponList ul li .codeNumber .addLabel{
+    color:#b2b2b2;
+}
+
+.contentInfo{
+    margin:1rem auto 0 auto;
+    background:#fff;
+    border-radius:0.2rem;
+    padding:3% 1%;
+    box-sizing:border-box;
+}
+
+.attentionInfo{
+    width:95%;
+    margin:0 auto;
+}
+
+.attentionTitle{
+    font-size:0.8rem;
+    color:#333333;
+    margin-bottom:0.5rem;
+    font-weight: bold;
+}

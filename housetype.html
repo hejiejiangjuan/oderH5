@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta charset="UTF-8">
+  <title>选择房型</title>
+  <link rel="stylesheet" type="text/css" href="themes/css/core.css">
+  <link rel="stylesheet" type="text/css" href="themes/css/home.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="themes/css/detail.css">
+  <link rel="stylesheet" href="themes/css/housetype.css">
+  <script type="text/javascript" src="themes/js/ajax.js"></script>
+  <!-- 引入样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/mint-ui/lib/style.css">
+  <!-- 引入组件库 -->
+  <script src="https://unpkg.com/mint-ui/lib/index.js"></script>
+</head>
+
+<body>
+  <div id="housetype" v-cloak class="aui-content-box" style="height: 100%;">
+
+    <div class="orderInfo">
+      <p class="orderNum">订单号：{{orderDetail.order_no}}</p>
+      <div class="timeInfo">
+        <img :src="orderDetail.pic_addr" onerror="this.src='themes/img/icon/log.jpg'" alt="">
+        <div>
+          <span>购买时间：{{orderDetail.pay_date}}</span>
+          <span>有效期限：{{orderDetail.start_date}}至{{orderDetail.end_date}}</span>
+        </div>
+      </div>
+      <div class="hotelInfo">
+        <span>{{orderDetail.order_name}}</span>
+        <span class="use-no">正在预约</span>
+      </div>
+    </div>
+
+
+    <div class="housetypeInfo">
+      <div class="houster-center">
+        <div class="houster-li">
+          <div class="houesto houster-name">房间类型</div>
+          <div class="houesto houster-number">数量(间)</div>
+          <div class="houesto houster-price">加价(元)</div>
+          <div class="houesto houster-price">选择</div>
+        </div>
+        <div class="houster-li" v-for="item in housetype">
+          <div class="houesto houster-name">{{item.name}}</div>
+          <div class="houesto houster-number">{{item.number}}</div>
+          <div class="houesto houster-price">{{item.price}}</div>
+          <div class="houesto"><input name="1" type="radio" :checked="picked" @click = "housetyLock(item.number)" /></div>
+        </div>
+        <div class="btncenter"><button class="okhouster">下一步</button></div>
+      </div>
+
+
+    </div>
+    <div class="contentInfo">
+      <div class="attentionTitle">
+        注意事项
+      </div>
+      <div class="attentionInfo">
+        <ul id="appointLimit">
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="tbotton-botn" style="width:100%;height:40px;overflow: hidden;position: fixed;bottom: 0px;color: #999;">
+		<div class="botton-ctn" style="width:400px;height:100%;margin:0 auto;">
+			<span style="display:block;width:200px;height:20px;margin:0 auto;text-align:center;lin-height:20px;font-size:12px;
+						"> 蜀ICP备15003730号-1</span>
+			<span style="display:block;width:260px;height:20px;margin:0 auto;text-align: center;lin-height:20px;font-size:12px;
+						">@Copyright2019黑豆科技.AllRightsReserved.</span>
+		</div>
+	</div> -->
+  <script type="text/javascript" src="themes/js/jquery-1.7.2.min.js"></script>
+  <script type="text/javascript" src="themes/js/housetype.js"></script>
+</body>
+
+</html>

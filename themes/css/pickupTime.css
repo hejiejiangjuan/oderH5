@@ -1,0 +1,52 @@
+.telephoneBox{
+    display: flex;
+    padding:2% ;
+    justify-content: space-between;
+    align-items: center;
+    background:#fff;
+    box-sizing: border-box;
+    /* border:1px solid #31233b; */
+    margin-bottom:1rem;
+    color:#606266;
+    font-size:14px;
+}
+.telephoneBox>div:first-child{
+    width:50%;
+    box-sizing:border-box;
+    border-right: 1px solid #ccc;
+}
+.capricorncd-calendar-container .calendar-table-wrapper table td div p .fool_room{
+    color:red;
+}
+.capricorncd-calendar-container .calendar-head-wrapper a.next-month i{
+    font-size:1.3rem;
+    color:#31233b;
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+}
+.el-input__inner{
+    border:none;
+    border:1px solid #fff !important;
+    text-align:center;
+
+}
+.el-input--suffix .el-input__inner{
+    font-weight: normal;
+    font-family: '微软雅黑'
+}
+.capricorncd-calendar-container .calendar-head-wrapper a.prev-month i {
+    font-size: 1.3rem;
+    color: #31233b;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.capricorncd-calendar-container .calendar-head-wrapper a.next-month i {
+    font-size: 1.3rem;
+    color: #31233b;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
